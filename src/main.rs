@@ -82,7 +82,7 @@ fn build_ui() -> impl Widget<AppState> {
                     .on_click(|_, item: &mut FileItem, _| {
                         open_folder(&item.path);
                     })
-                    .padding(5.0)   
+                    .padding(5.0)
                     .fix_width(100.0)
                     .background(Color::rgb8(100, 237, 149)) // Цвет кнопки
                     .rounded(5.0)
@@ -90,7 +90,7 @@ fn build_ui() -> impl Widget<AppState> {
             )
             .with_spacer(5.0)
             .with_child(
-                Button::new("🗑️")  // Удалить файл
+                Button::new("🗑")  // Удалить файл
                     .on_click(|_, item: &mut FileItem, _| {
                         delete_file(&item.path);
                     })
@@ -104,23 +104,28 @@ fn build_ui() -> impl Widget<AppState> {
     .lens(AppState::files)
     .padding(5.0);
 
-    Flex::column()
-        .cross_axis_alignment(CrossAxisAlignment::Center)
-        .with_child(
-            Flex::row()
-                .with_child(select_folder_button)
-                .with_spacer(10.0)
-                .with_child(search_box)
-                .with_spacer(10.0)
-                .with_child(search_button)
-                .padding(5.0)
-        )
-        .with_spacer(10.0)
-        .with_child(folder_display) // Отображение директории
-        .with_flex_child(file_list, 1.0)
-        .padding(5.0)
+    // Создаем контейнер с фоновым цветом
+    let background = Container::new(
+        Flex::column()
+            .cross_axis_alignment(CrossAxisAlignment::Center)
+            .with_child(
+                Flex::row()
+                    .with_child(select_folder_button)
+                    .with_spacer(10.0)
+                    .with_child(search_box)
+                    .with_spacer(10.0)
+                    .with_child(search_button)
+                    .padding(5.0)
+            )
+            .with_spacer(10.0)
+            .with_child(folder_display) // Отображение директории
+            .with_flex_child(file_list, 1.0)
+            .padding(5.0)
+    )
+    .background(Color::rgb8(126, 91, 155)) // Задаем цвет фона
+    .padding(5.0); // Отступ вокруг контейнера
+    background
 }
-
 fn search_files(path: &str, query: &str) -> Arc<Vec<FileItem>> {
     let root_path = Path::new(path).to_path_buf(); // Сохраняем путь к корневой директории
     let files = WalkDir::new(path)
