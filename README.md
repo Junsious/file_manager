@@ -1,71 +1,71 @@
 # File Manager
 
-File Manager - это простое и удобное приложение на Rust с графическим интерфейсом для поиска, открытия и удаления файлов в выбранной директории. Программа позволяет пользователю выбрать папку, найти нужные файлы по имени и работать с ними (открывать в файловом менеджере и удалять).
+File Manager is a simple and convenient application written in Rust with a graphical interface for searching, opening, and deleting files in a selected directory. The program allows users to choose a folder, find the desired files by name, and work with them (open in the file manager and delete).
 
-## Особенности
+## Features
 
-- Выбор директории для поиска файлов
-- Поиск файлов по имени
-- Открытие директории файла в файловом менеджере
-- Удаление файлов
-- Простой и интуитивно понятный интерфейс
+- Select a directory for file search
+- Search files by name
+- Open the file's directory in the file manager
+- Delete files
+- Simple and intuitive interface
 
-## Установка и запуск
+## Installation and Running
 
-### Требования
+### Requirements
 
-- [Rust](https://www.rust-lang.org/learn/get-started) версии 1.65 или новее
-- [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) для управления зависимостями
+- [Rust](https://www.rust-lang.org/learn/get-started) version 1.65 or newer
+- [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) for dependency management
 
-### Установка
+### Installation
 
-1. Клонируйте репозиторий:
+1. Clone the repository:
 
     ```bash
     git clone https://github.com/Junsious/file_manager.git
     ```
 
-2. Перейдите в директорию проекта:
+2. Navigate to the project directory:
 
     ```bash
     cd file_manager
     ```
 
-3. Соберите проект:
+3. Build the project:
 
     ```bash
     cargo build --release
     ```
 
-4. Запустите приложение:
+4. Run the application:
 
     ```bash
     cargo run
     ```
 
-### Платформы
+### Platforms
 
 - Windows
 - macOS
 - Linux
 
-## Использование
+## Usage
 
-1. Нажмите на иконку 📁, чтобы выбрать директорию, в которой будет производиться поиск.
-2. Введите имя файла или часть имени в текстовое поле для поиска.
-3. Нажмите на кнопку 🔍 для поиска файлов.
-4. Вы можете открыть папку с файлом (кнопка 📂) или удалить файл (кнопка 🗑️).
+1. Click the 📁 icon to select the directory where the search will take place.
+2. Enter the file name or part of the name in the search text box.
+3. Click the 🔍 button to search for files.
+4. You can open the folder containing the file (📂 button) or delete the file (🗑️ button).
 
-## Скриншоты
+## Screenshots
 
-*(Здесь можно добавить скриншоты приложения, если требуется)*
+*(Screenshots of the application can be added here, if required)*
 
-## Лицензия
+## License
 
-Проект распространяется под лицензией MIT. Подробности можно найти в файле LICENSE.
+This project is licensed under the MIT License. Details can be found in the LICENSE file.
 
 ---
 
-### Автор
+### Author
 
 Junsious ([GitHub](https://github.com/Junsious))
