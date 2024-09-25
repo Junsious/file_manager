@@ -1,5 +1,5 @@
 # File Manager
-
+- [RU version](https://github.com/Junsious/file_manager/blob/main/README_ru.md)
 File Manager is a simple and convenient application written in Rust with a graphical interface for searching, opening, and deleting files in a selected directory. The program allows users to choose a folder, find the desired files by name, and work with them (open in the file manager and delete).
 
 ## Features
