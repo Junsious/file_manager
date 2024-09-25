@@ -1,0 +1,14 @@
+[package]
+name = "file_manager"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+druid = "0.8.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+im = "15.0.0"
+native-dialog = "0.7.0"
+rfd = "0.15"
+walkdir = "2.3.2"
+winapi = { version = "0.3", features = ["consoleapi"] }
