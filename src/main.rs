@@ -125,7 +125,7 @@ fn build_ui() -> impl Widget<AppState> {
             .with_flex_child(file_list, 1.0)
             .padding(5.0)
     )
-    .background(Color::rgb8(107, 100, 131)) // Задаем цвет фона
+    .background(Color::rgb8(126, 91, 155)) // Задаем цвет фона
     .padding(5.0); // Отступ вокруг контейнера
     background
 }
