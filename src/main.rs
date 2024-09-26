@@ -30,19 +30,21 @@ fn build_ui() -> impl Widget<AppState> {
                 data.search_enabled = true;
             }
         })
-        .padding(5.0)
+        .padding(3.0)
         .fix_width(100.0)
         .background(Color::rgb8(100, 149, 237)) // Цвет кнопки
-        .rounded(5.0) // Закругленные углы
+        .rounded(7.0) // Закругленные углы
         .center();
 
     let search_box = TextBox::new()
         .with_placeholder("Введите имя файла")
         .lens(AppState::search_query)
-        .padding(10.0)
+        .padding(0.5)
         .fix_width(200.0)
-        .border(Color::rgb8(150, 150, 150), 1.0) // Изменено на 1.0 для совпадения с толщиной рамки кнопки удаления
+        .border(Color::rgb8(0, 0, 0), 4.0) // Изменено на 1.0 для совпадения с толщиной рамки кнопки удаления
+        .rounded(7.0)
         .center();
+
 
     let search_button = Button::new("🔍")
         .on_click(|ctx, data: &mut AppState, _| {
@@ -50,10 +52,10 @@ fn build_ui() -> impl Widget<AppState> {
             ctx.request_update();
         })
         .disabled_if(|data: &AppState, _| !data.search_enabled)
-        .padding(5.0)
+        .padding(3.0)
         .fix_width(100.0)
         .background(Color::rgb8(100, 237, 149)) // Цвет кнопки
-        .rounded(5.0) // Закругленные углы
+        .rounded(7.0) // Закругленные углы
         .center();
 
     let folder_display = Container::new(Label::dynamic(|data: &AppState, _| {
@@ -63,10 +65,11 @@ fn build_ui() -> impl Widget<AppState> {
             format!("Выбрана директория: {}", data.selected_folder)
         }
     }))
-    .border(Color::rgb8(150, 150, 150), 1.0) // Изменено на 1.0 для совпадения с толщиной рамки кнопки удаления
-    .padding(10.0)
-    .fix_width(400.0)
-    .center();
+        .border(Color::rgb8(0, 0, 0), 4.0)  // Толщина рамки
+        .rounded(7.0)  // Радиус закругления углов
+        .padding(10.0)
+        .center();
+
 
     let file_list = Scroll::new(List::new(|| {
         Flex::row()
@@ -122,7 +125,7 @@ fn build_ui() -> impl Widget<AppState> {
             .with_flex_child(file_list, 1.0)
             .padding(5.0)
     )
-    .background(Color::rgb8(126, 91, 155)) // Задаем цвет фона
+    .background(Color::rgb8(107, 100, 131)) // Задаем цвет фона
     .padding(5.0); // Отступ вокруг контейнера
     background
 }
